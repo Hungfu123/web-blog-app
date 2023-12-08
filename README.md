@@ -1,7 +1,8 @@
 # Web Blog App
 
 Die Web Blog App ist eine Anwendung, die mit Spring Boot, Java, MySQL und Thymeleaf entwickelt wurde. Sie verwendet Java 17 und Gradle als Build-Tool. Die Anwendung nutzt Spring JPA für die Datenbankinteraktion und Spring Security für die Authentifizierung und Autorisierung.
-
+Bei meinem Beispiel habe ich Blog Einträge über Tastaturen gemacht, weil ich mich auch für Tastaturen interessiere.
+![Web Blog App](./images/blogapp.jpg)
 ## Funktionen
 
 - **Benutzerrollen:**
@@ -57,3 +58,12 @@ Um die Anwendung lokal auszuführen, führe die folgenden Schritte aus:
     ./gradlew bootRun
 
 Greife über deinen Webbrowser auf die Anwendung zu: http://localhost:8080
+
+### Anmelden
+![Web Blog App](./images/blogapp-anmelden.jpg)
+### Admin
+![Web Blog App](./images/blogapp-admin.jpg)
+### Kommentare
+![Web Blog App](./images/blogapp-kommentare.jpg)
+### Suchfunktion
+![Web Blog App](./images/blog-app-search.jpg)
