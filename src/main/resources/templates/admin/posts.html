@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div th:replace="~{admin/header :: header}"></div>
+<body>
+
+<div th:replace="~{admin/header :: navbar}"></div>
+
+<div class="container">
+    <div class="row">
+        <h1>Blog-Beiträge</h1>
+        <div class="jumbotron">
+            <h5 th:text="${username} + '\'s Blog'">Username Blog</h5>
+        </div>
+    </div>
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+        <th style="width: 5%">#</th>
+        <th style="width: 20%">Titel</th>
+        <th style="width: 25%">Kurzbeschreibung</th>
+        <th style="width: 15%">Erstellt am</th>
+        <th style="width: 25%">Aktionen</th>
+        </thead>
+        <tbody>
+        <tr th:each="post, postStat : ${posts}">
+            <td th:text="${postStat.count}">1</td>
+            <td th:text="${post.title}">Titel</td>
+            <td th:text="${post.shortDescription}">Kurzbeschreibung</td>
+            <td th:text="${#temporals.format(post.createdOn, 'dd.MM.yyyy')}">Erstellt am</td>
+            <td>
+                <a th:href="@{/admin/posts/{postId}/edit(postId=${post.id})}" class="btn btn-primary">Bearbeiten</a>
+                <a th:href="@{/admin/posts/{postId}/delete(postId=${post.id})}" class="btn btn-danger">Löschen</a>
+                <a th:href="@{/admin/posts/{postUrl}/view(postUrl=${post.url})}" class="btn btn-info">Details</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="~{admin/footer :: footer}"></div>
+</body>
+</html>

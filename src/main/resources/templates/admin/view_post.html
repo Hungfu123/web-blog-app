@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div th:replace="~{admin/header :: header}"></div>
+<body>
+<div th:replace="~{admin/header :: navbar}"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2 th:text="${post.title}"></h2>
+      <hr>
+      <h5 th:text="${post.shortDescription}"></h5>
+      <hr>
+      <div th:utext="${post.content}"></div>
+    </div>
+    <br>
+  </div>
+</div>
+
+
+</body>
+<div th:replace="~{admin/footer :: footer}"></div>
+</html>
